@@ -1,20 +1,20 @@
-const priceKm = 0.21;
-const youngDiscount = 0.20;
-const olderDiscount = 0.40;
+const PRICE_KM = 0.21;
+const YOUNG_DISCOUNT = 0.20;
+const OLDER_DISCOUNT = 0.40;
 
 const km = Number(prompt('Quanti chilometri vuoi percorrere ?'));
 const age = Number(prompt('Quanti anni hai ?'));
 
 
-let finalPrice = km * priceKm;
+let ticketPrice = km * PRICE_KM;
 
 if (age > 65) {
-    finalPrice -= finalPrice * olderDiscount;
+    ticketPrice -= ticketPrice * OLDER_DISCOUNT;
 
 } else if (age < 18) {
-    finalPrice -= finalPrice * youngDiscount;
+    ticketPrice -= ticketPrice * YOUNG_DISCOUNT;
 }
 
-finalPrice = finalPrice.toFixed(2);
+ticketPrice = ticketPrice.toFixed(2);
 
-console.log(`Il prezzo è € ${finalPrice}`);
+console.log(`Il prezzo è € ${ticketPrice}`);
